@@ -97,4 +97,79 @@ const Button = ({
   );
 };
 
+import React from "react";
+
+type FancyButtonProps = {
+  text?: string;
+  icon?: React.ReactNode;
+  onClick?: () => void;
+};
+
+export const FancyButton = ({
+  text = "Add Item",
+  icon,
+  onClick,
+}: FancyButtonProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className="
+        group
+        relative
+        flex
+        h-10
+        w-37.5
+        items-center
+        overflow-hidden
+        rounded-xl
+        border-2
+        border-zinc-200
+        bg-zinc-800
+        shadow-[4px_4px_0px_#e4e4e7]
+        transition-all
+        duration-300
+        active:translate-x-0.75
+        active:translate-y-0.75
+        active:shadow-none
+      "
+    >
+      {/* Text */}
+      <span
+        className="
+          translate-x-6
+          font-semibold
+          text-zinc-200
+          transition-all
+          duration-300
+          group-hover:text-transparent
+        "
+      >
+        {text}
+      </span>
+
+      {/* Icon */}
+      <span
+        className="
+          absolute
+          right-0
+          flex
+          h-full
+          w-10
+          items-center
+          justify-center
+          bg-zinc-900
+          text-white
+          transition-all
+          duration-300
+          group-hover:w-full
+        "
+      >
+        {icon}
+      </span>
+    </button>
+  );
+};
+
+
+
 export default Button;
