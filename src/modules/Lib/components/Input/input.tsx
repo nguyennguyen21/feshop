@@ -12,6 +12,7 @@ export interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputEle
   shadowOffset?: string;
   height?: string;
   duration?: string;
+  width?: string;
 }
 
 export const FloatingInput = forwardRef<HTMLInputElement, CustomInputProps>(({
@@ -88,7 +89,7 @@ type Input3DProps = {
   inputBackground?: string;
 };
 
-export const BrutalInput: React.FC<Input3DProps> = ({
+const BrutalInput: React.FC<Input3DProps> = ({
   label = "USERNAME",
   placeholder = "Type here...",
   buttonText = "Go",
@@ -363,3 +364,4 @@ export const DatePicker = forwardRef<
 
 DatePicker.displayName = "DatePicker";
 
+export { BrutalInput };

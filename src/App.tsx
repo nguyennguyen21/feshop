@@ -46,11 +46,10 @@ function LayoutWrapper() {
     <Layout>
       <Suspense
         fallback={
-          <svg className="w-50 h-50 mx-auto text-orange-600 animate-spin" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="8" />
-            <line x1="50" y1="50" x2="50" y2="25" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
-            <line x1="50" y1="50" x2="75" y2="50" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-          </svg>
+          <div>
+          <div className="flex space-x-1 items-center h-8"><span className="w-2 h-2 bg-orange-600 rounded-full animate-bounce" style={{ animationDelay: '-0.3s' }}></span><span className="w-2 h-2 bg-orange-600 rounded-full animate-bounce" style={{ animationDelay: '-0.15s' }}></span><span className="w-2 h-2 bg-orange-600 rounded-full animate-bounce"></span></div>
+          <div className="p-8">Đang tải...</div>
+          </div>
         }
       >
         {routing}
